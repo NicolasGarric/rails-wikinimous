@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.save
     # No need for app/views/articles/create.html.erb
-    redirect_to article_path(@article)
+    redirect_to articles_path
   end
 
   def edit
@@ -40,6 +40,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:name, :address, :rating)
+    params.require(:article).permit(:title, :content)
   end
 end
