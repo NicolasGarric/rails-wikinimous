@@ -1,0 +1,12 @@
+<%= form_with model: @article do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Delete",
+  article_path(@article),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
